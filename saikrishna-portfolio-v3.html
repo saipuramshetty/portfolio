@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Saikrishna Rao M — Digital Marketing Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Mono:wght@300;400;500&family=Bebas+Neue&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0c0c0f;
+  --ink2:#13131a;
+  --panel:#18181f;
+  --panel2:#1f1f28;
+  --gold:#c9a84c;
+  --gold2:#e8c96d;
+  --gold-dim:rgba(201,168,76,0.15);
+  --gold-line:rgba(201,168,76,0.25);
+  --cream:#f4efe6;
+  --cream2:#ccc4b4;
+  --dust:#7a7468;
+  --red:#c0392b;
+  --border:rgba(255,255,255,0.07);
+  --border2:rgba(201,168,76,0.2);
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'DM Mono',monospace;
+  background:var(--ink);
+  color:var(--cream);
+  overflow-x:hidden;
+  cursor:none;
+}
+
+/* ═══ CURSOR ═══ */
+#c-dot{
+  width:8px;height:8px;
+  background:var(--gold);
+  border-radius:50%;
+  position:fixed;pointer-events:none;z-index:9999;
+  transition:transform 0.1s;
+}
+#c-ring{
+  width:40px;height:40px;
+  border:1px solid var(--gold-line);
+  border-radius:50%;
+  position:fixed;pointer-events:none;z-index:9998;
+  transition:transform 0.15s;
+}
+
+/* ═══ NAV ═══ */
+nav{
+  position:fixed;top:0;width:100%;z-index:500;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 4%;height:60px;
+  border-bottom:1px solid var(--border);
+  background:rgba(12,12,15,0.94);
+  backdrop-filter:blur(20px);
+}
+.logo{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.5rem;letter-spacing:0.12em;
+  color:var(--cream);text-decoration:none;
+  display:flex;align-items:center;gap:3px;
+}
+.logo em{color:var(--gold);font-style:normal}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{
+  font-size:0.65rem;color:var(--dust);text-decoration:none;
+  letter-spacing:0.18em;text-transform:uppercase;
+  transition:color 0.2s;
+}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:0.9rem;letter-spacing:0.14em;
+  background:transparent;border:1px solid var(--gold-line);
+  color:var(--gold);padding:8px 20px;text-decoration:none;
+  transition:all 0.25s;
+}
+.nav-cta:hover{background:var(--gold);color:var(--ink)}
+
+/* ═══ HERO ═══ */
+#hero{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:1fr 500px;
+  align-items:stretch;
+  padding-top:60px;
+  position:relative;overflow:hidden;
+}
+.hero-noise{
+  position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:0;
+}
+.hero-rule{
+  position:absolute;
+  left:0;bottom:0;width:100%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold-line),transparent);
+}
+
+.hero-left{
+  position:relative;z-index:2;
+  padding:6% 6% 6% 5%;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  border-right:1px solid var(--border);
+}
+.hero-vol{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:0.75rem;letter-spacing:0.3em;
+  color:var(--dust);margin-bottom:3rem;
+  display:flex;align-items:center;gap:1rem;
+}
+.hero-vol::after{content:'';flex:1;height:1px;background:var(--border)}
+
+.hero-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(4rem,8vw,7.5rem);
+  font-weight:300;
+  line-height:0.88;
+  letter-spacing:-0.02em;
+  color:var(--cream);
+  margin-bottom:0.5rem;
+}
+.hero-name .italic{font-style:italic;color:var(--gold)}
+.hero-title-line{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(1.2rem,3vw,2rem);
+  letter-spacing:0.22em;
+  color:var(--dust);
+  margin-bottom:3rem;
+  border-top:1px solid var(--border2);
+  padding-top:1.2rem;
+  margin-top:1.2rem;
+}
+
+.hero-desc{
+  font-size:0.8rem;color:var(--dust);
+  line-height:1.9;max-width:500px;
+  font-weight:300;margin-bottom:3rem;
+  letter-spacing:0.03em;
+}
+.hero-actions{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+.btn-primary{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1rem;letter-spacing:0.18em;
+  background:var(--gold);color:var(--ink);
+  padding:14px 36px;text-decoration:none;
+  transition:all 0.2s;display:inline-block;
+}
+.btn-primary:hover{background:var(--gold2);transform:translateY(-2px)}
+.btn-secondary{
+  font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--dust);text-decoration:none;
+  border-bottom:1px solid var(--border2);padding-bottom:2px;
+  transition:color 0.2s,border-color 0.2s;
+}
+.btn-secondary:hover{color:var(--gold);border-color:var(--gold)}
+
+/* HERO METRICS STRIP */
+.hero-stats{
+  display:flex;gap:0;margin-bottom:3rem;
+  border:1px solid var(--border2);
+}
+.hstat{
+  flex:1;padding:1.4rem 1.2rem;
+  border-right:1px solid var(--border2);
+  text-align:center;
+}
+.hstat:last-child{border-right:none}
+.hstat-n{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2.4rem;font-weight:600;
+  color:var(--gold);display:block;line-height:1;
+}
+.hstat-l{
+  font-size:0.58rem;letter-spacing:0.15em;
+  text-transform:uppercase;color:var(--dust);
+  display:block;margin-top:6px;
+}
+
+/* HERO RIGHT — PHOTO COLUMN */
+.hero-right{
+  position:relative;z-index:2;
+  display:flex;flex-direction:column;
+  background:var(--ink2);
+}
+.photo-main{
+  flex:1;position:relative;
+  overflow:hidden;
+  background:var(--panel);
+  display:flex;align-items:center;justify-content:center;
+  min-height:400px;
+}
+/* 
+  ════════════════════════════════
+  PHOTO ZONE — LinkedIn Profile Photo
+  Replace the img src below with your
+  actual LinkedIn profile photo URL
+  or upload the image and reference it.
+  ════════════════════════════════
+*/
+.photo-main img{
+  width:100%;height:100%;object-fit:cover;
+  object-position:top center;
+  display:block;
+  filter:grayscale(15%) contrast(1.05);
+  transition:filter 0.5s;
+}
+.photo-main:hover img{filter:grayscale(0%) contrast(1)}
+.photo-placeholder{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:1rem;text-align:center;padding:2rem;
+  width:100%;height:100%;
+}
+.photo-placeholder svg{opacity:0.15}
+.photo-placeholder p{font-size:0.65rem;letter-spacing:0.15em;color:var(--dust);text-transform:uppercase;line-height:1.8}
+
+.photo-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(12,12,15,0.8) 0%, transparent 50%);
+  pointer-events:none;
+}
+.photo-caption{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:2rem;
+  display:flex;justify-content:space-between;align-items:flex-end;
+}
+.photo-tag{
+  background:var(--gold);color:var(--ink);
+  font-family:'Bebas Neue',sans-serif;
+  font-size:0.75rem;letter-spacing:0.18em;
+  padding:5px 12px;
+}
+.photo-loc{
+  font-size:0.58rem;letter-spacing:0.15em;
+  color:var(--cream2);text-transform:uppercase;
+}
+.hero-chips{
+  display:flex;flex-wrap:wrap;gap:1px;
+  border-top:1px solid var(--border);
+}
+.h-chip{
+  flex:1;min-width:calc(50% - 1px);
+  padding:0.8rem 1rem;
+  border-right:1px solid var(--border);
+  font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--dust);background:var(--ink2);
+  transition:color 0.2s,background 0.2s;
+  text-align:center;
+}
+.h-chip:nth-child(2n){border-right:none}
+.h-chip:hover{color:var(--gold);background:var(--panel)}
+
+/* ═══ MARQUEE ═══ */
+.ticker{
+  background:var(--gold);padding:10px 0;
+  overflow:hidden;white-space:nowrap;
+}
+.ticker-inner{display:inline-flex;animation:tick 30s linear infinite}
+.ticker-item{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:0.85rem;letter-spacing:0.2em;
+  color:var(--ink);padding:0 2.5rem;
+  display:flex;align-items:center;gap:2rem;
+}
+.ticker-sep{width:4px;height:4px;background:rgba(0,0,0,0.3);border-radius:50%;flex-shrink:0}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ═══ SECTION COMMONS ═══ */
+section{padding:8rem 5%}
+.sec-header{margin-bottom:5rem}
+.sec-vol{
+  font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1rem;
+  display:flex;align-items:center;gap:1rem;
+}
+.sec-vol::before{content:'';width:32px;height:1px;background:var(--gold)}
+.sec-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.8rem,6vw,5rem);
+  font-weight:300;line-height:0.95;
+  letter-spacing:-0.02em;color:var(--cream);
+}
+.sec-title em{font-style:italic;color:var(--gold)}
+.sec-subtitle{
+  font-size:0.75rem;color:var(--dust);letter-spacing:0.08em;
+  line-height:1.8;margin-top:1.5rem;max-width:500px;
+}
+
+/* ═══ ABOUT ═══ */
+#about{background:var(--ink2)}
+.about-layout{
+  display:grid;
+  grid-template-columns:1fr 420px;
+  gap:5rem;align-items:start;
+}
+.about-body p{
+  font-size:0.82rem;color:var(--cream2);
+  line-height:2;font-weight:300;
+  margin-bottom:1.5rem;letter-spacing:0.02em;
+}
+.about-body p strong{color:var(--cream);font-weight:500}
+.about-body p em{color:var(--gold);font-style:normal}
+
+.skill-bars{display:flex;flex-direction:column;gap:0}
+.sbar-row{
+  padding:1.1rem 0;
+  border-bottom:1px solid var(--border);
+  display:grid;grid-template-columns:1fr 120px 48px;
+  gap:1rem;align-items:center;
+}
+.sbar-row:first-child{border-top:1px solid var(--border)}
+.sbar-label{font-size:0.72rem;letter-spacing:0.1em;color:var(--cream2)}
+.sbar-track{height:1px;background:rgba(255,255,255,0.08);position:relative}
+.sbar-fill{
+  position:absolute;top:0;left:0;height:100%;
+  background:var(--gold);transition:width 1.4s cubic-bezier(0.4,0,0.2,1);
+}
+.sbar-pct{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.1rem;color:var(--gold);
+  text-align:right;font-weight:600;
+}
+
+/* ═══ EXPERIENCE ═══ */
+#experience{background:var(--ink)}
+.exp-table{border-top:1px solid var(--border);margin-top:0}
+.exp-row{
+  display:grid;
+  grid-template-columns:180px 60px 1fr auto;
+  gap:2rem;align-items:start;
+  padding:3rem 0;
+  border-bottom:1px solid var(--border);
+  position:relative;
+  transition:background 0.2s;
+}
+.exp-row::before{
+  content:'';
+  position:absolute;left:0;top:0;bottom:0;width:0;
+  background:var(--gold-dim);
+  transition:width 0.3s ease;
+}
+.exp-row:hover::before{width:100%}
+.exp-period{
+  font-size:0.65rem;letter-spacing:0.12em;
+  color:var(--dust);line-height:1.8;
+  padding-top:4px;position:relative;
+}
+.exp-badge{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:0.7rem;letter-spacing:0.15em;
+  color:var(--gold);background:var(--gold-dim);
+  border:1px solid var(--gold-line);
+  padding:3px 8px;display:inline-block;margin-top:8px;
+  white-space:nowrap;
+}
+.exp-idx{
+  font-family:'Cormorant Garamond',serif;
+  font-size:4rem;font-weight:300;
+  color:rgba(255,255,255,0.04);
+  line-height:1;position:relative;
+}
+.exp-role{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.6rem;font-weight:600;
+  color:var(--cream);line-height:1.1;
+  margin-bottom:0.4rem;position:relative;
+}
+.exp-co{
+  font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1.2rem;position:relative;
+}
+.exp-pts{list-style:none;display:flex;flex-direction:column;gap:0.5rem;position:relative;}
+.exp-pts li{
+  font-size:0.72rem;color:var(--dust);
+  padding-left:1.4rem;position:relative;
+  line-height:1.7;letter-spacing:0.02em;
+}
+.exp-pts li::before{
+  content:'—';position:absolute;left:0;
+  color:var(--gold);font-size:0.65rem;top:2px;
+}
+.exp-award-img{
+  width:80px;height:80px;
+  object-fit:cover;border:1px solid var(--border2);
+  flex-shrink:0;
+}
+.exp-img-slot{
+  width:80px;height:80px;
+  background:var(--panel);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;font-size:0.5rem;letter-spacing:0.1em;
+  color:var(--dust);text-align:center;text-transform:uppercase;
+  line-height:1.6;padding:0.5rem;
+}
+
+/* ═══ SKILLS ═══ */
+#skills{background:var(--ink2)}
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:var(--border);
+  border:1px solid var(--border);
+  margin-top:0;
+}
+.skill-panel{
+  background:var(--ink2);
+  padding:2.5rem 2rem;
+  transition:background 0.2s;
+  position:relative;
+  overflow:hidden;
+}
+.skill-panel::after{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;height:1px;
+  background:var(--gold);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform 0.35s ease;
+}
+.skill-panel:hover{background:var(--panel)}
+.skill-panel:hover::after{transform:scaleX(1)}
+.sp-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:3rem;font-weight:300;
+  color:rgba(201,168,76,0.1);
+  line-height:1;margin-bottom:1.2rem;
+}
+.sp-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.2rem;font-weight:600;
+  color:var(--cream);margin-bottom:1rem;
+  line-height:1.2;
+}
+.sp-tags{display:flex;flex-wrap:wrap;gap:5px}
+.sp-tag{
+  font-size:0.6rem;letter-spacing:0.1em;
+  color:var(--dust);background:rgba(255,255,255,0.04);
+  padding:4px 10px;border:1px solid var(--border);
+  transition:color 0.2s,border-color 0.2s;
+}
+.skill-panel:hover .sp-tag{border-color:var(--border2);color:var(--cream2)}
+
+.tools-row{
+  display:flex;flex-wrap:wrap;gap:8px;
+  margin-top:3rem;
+  padding-top:3rem;
+  border-top:1px solid var(--border);
+}
+.tool-token{
+  font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--dust);border:1px solid var(--border);
+  padding:6px 14px;
+  transition:all 0.2s;
+}
+.tool-token:hover{color:var(--gold);border-color:var(--gold-line);background:var(--gold-dim)}
+
+/* ═══ IMPACT ═══ */
+#impact{
+  background:var(--ink);
+  padding:0;
+}
+.impact-band{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--border2);
+  border-bottom:1px solid var(--border2);
+}
+.impact-cell{
+  padding:5rem 3rem;
+  border-right:1px solid var(--border2);
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.impact-cell:last-child{border-right:none}
+.impact-cell::before{
+  content:'';
+  position:absolute;inset:0;
+  background:var(--gold-dim);
+  transform:scaleY(0);transform-origin:bottom;
+  transition:transform 0.4s ease;
+}
+.impact-cell:hover::before{transform:scaleY(1)}
+.impact-n{
+  font-family:'Cormorant Garamond',serif;
+  font-size:4.5rem;font-weight:300;
+  color:var(--gold);line-height:1;
+  display:block;margin-bottom:0.8rem;
+  position:relative;
+}
+.impact-l{
+  font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--dust);line-height:1.6;position:relative;
+}
+
+/* ═══ AWARDS ═══ */
+#awards{background:var(--ink2)}
+.awards-layout{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1px;background:var(--border);
+  border:1px solid var(--border);
+  margin-top:0;
+}
+.award-card{
+  background:var(--ink2);padding:3rem;
+  position:relative;overflow:hidden;
+  transition:background 0.2s;
+}
+.award-card:hover{background:var(--panel)}
+.award-photo-zone{
+  width:100%;
+  height:200px;
+  background:var(--panel);
+  border:1px solid var(--border);
+  margin-bottom:2rem;
+  overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;
+}
+/*
+  ════════════════════════════════
+  AWARD PHOTO ZONES
+  Replace .aw-img src with your actual
+  award ceremony / AOP photos.
+  Each card has one photo zone.
+  ════════════════════════════════
+*/
+.award-photo-zone img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform 0.5s ease;filter:grayscale(20%);
+}
+.award-card:hover .award-photo-zone img{transform:scale(1.04);filter:grayscale(0%)}
+.aw-photo-placeholder{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:0.8rem;text-align:center;padding:1.5rem;
+  font-size:0.58rem;letter-spacing:0.15em;color:var(--dust);text-transform:uppercase;
+  line-height:1.8;width:100%;height:100%;
+}
+.aw-year-mark{
+  font-family:'Cormorant Garamond',serif;
+  font-size:6rem;font-weight:300;
+  color:rgba(201,168,76,0.06);
+  position:absolute;right:1.5rem;top:0.5rem;
+  line-height:1;letter-spacing:-0.04em;
+  pointer-events:none;
+}
+.aw-cat{
+  font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:0.8rem;
+}
+.aw-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.4rem;font-weight:600;
+  color:var(--cream);line-height:1.2;margin-bottom:0.5rem;
+}
+.aw-org{
+  font-size:0.65rem;letter-spacing:0.1em;
+  color:var(--dust);margin-bottom:1rem;
+}
+.aw-desc{
+  font-size:0.72rem;color:var(--dust);
+  line-height:1.75;letter-spacing:0.02em;
+}
+.aw-stamp{
+  display:inline-flex;align-items:center;gap:6px;
+  margin-top:1.5rem;
+  font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;
+  color:var(--gold);
+  border:1px solid var(--gold-line);
+  padding:4px 12px;
+}
+.aw-dot{width:5px;height:5px;background:var(--gold);border-radius:50%}
+
+/* ═══ CERTIFICATIONS ═══ */
+#certifications{background:var(--ink)}
+.cert-layout{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:5rem;
+  align-items:start;
+}
+.cert-list{display:flex;flex-direction:column;gap:1px}
+.cert-item{
+  display:flex;align-items:center;gap:1.5rem;
+  padding:1.5rem;
+  background:var(--panel);
+  border-left:2px solid transparent;
+  transition:all 0.2s;
+  cursor:default;
+}
+.cert-item:hover{border-left-color:var(--gold);background:var(--panel2)}
+.cert-ico{
+  width:44px;height:44px;
+  background:var(--gold-dim);border:1px solid var(--gold-line);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;flex-shrink:0;
+}
+.cert-info{}
+.cert-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1rem;font-weight:600;color:var(--cream);
+  line-height:1.2;margin-bottom:3px;
+}
+.cert-issuer{font-size:0.62rem;letter-spacing:0.1em;color:var(--dust)}
+.cert-verified{
+  margin-left:auto;flex-shrink:0;
+  font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;
+  color:var(--gold);border:1px solid var(--gold-line);padding:4px 8px;
+}
+
+/* CERT PHOTO STRIP */
+.cert-photos{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1px;
+  background:var(--border);
+}
+.cert-photo-card{
+  background:var(--panel);
+  overflow:hidden;
+  position:relative;
+}
+/*
+  ════════════════════════════════
+  CERTIFICATION PHOTO ZONES
+  Replace .cert-photo-card img src
+  with your Google/other cert badge
+  screenshots or photos.
+  ════════════════════════════════
+*/
+.cert-photo-card img{
+  width:100%;height:160px;
+  object-fit:cover;display:block;
+  filter:grayscale(30%) brightness(0.85);
+  transition:all 0.4s;
+}
+.cert-photo-card:hover img{
+  filter:grayscale(0%) brightness(1);
+  transform:scale(1.05);
+}
+.cert-photo-label{
+  padding:0.75rem 1rem;
+  font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--dust);border-top:1px solid var(--border);
+}
+.cert-photo-placeholder{
+  height:160px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:0.5rem;font-size:0.55rem;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--dust);text-align:center;padding:1rem;line-height:1.8;
+}
+
+/* ═══ AOP / GALLERY ═══ */
+#gallery{background:var(--ink2)}
+.gallery-intro{
+  font-size:0.75rem;color:var(--dust);letter-spacing:0.06em;
+  line-height:1.9;max-width:600px;margin-bottom:4rem;
+}
+.gallery-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  grid-template-rows:280px 200px;
+  gap:2px;
+}
+/*
+  ════════════════════════════════
+  AOP & TEAM PHOTO ZONES
+  6 photo slots arranged in a magazine
+  editorial grid. Add images of:
+  • Annual reviews / strategy meetings
+  • Team events / office moments
+  • Campaign launch moments
+  • Brand activation photos
+  ════════════════════════════════
+*/
+.gal-item{
+  overflow:hidden;position:relative;
+  background:var(--panel);
+  display:flex;align-items:center;justify-content:center;
+}
+.gal-item.span-row{grid-row:span 2}
+.gal-item img{
+  width:100%;height:100%;object-fit:cover;
+  display:block;
+  filter:grayscale(25%) contrast(1.05);
+  transition:all 0.5s ease;
+}
+.gal-item:hover img{
+  filter:grayscale(0%) contrast(1);
+  transform:scale(1.04);
+}
+.gal-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(12,12,15,0.7),transparent 50%);
+  pointer-events:none;
+}
+.gal-label{
+  position:absolute;bottom:1rem;left:1rem;
+  font-size:0.58rem;letter-spacing:0.15em;text-transform:uppercase;
+  color:rgba(244,239,230,0.7);
+}
+.gal-placeholder{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:0.6rem;font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--dust);text-align:center;padding:1.5rem;line-height:1.8;
+  width:100%;height:100%;
+}
+
+/* ═══ EDUCATION ═══ */
+#education{background:var(--ink)}
+.edu-layout{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1px;background:var(--border);
+  border:1px solid var(--border);
+  margin-top:0;
+}
+.edu-card{
+  background:var(--ink);padding:3rem;
+  display:flex;flex-direction:column;gap:1rem;
+  transition:background 0.2s;
+}
+.edu-card:hover{background:var(--panel)}
+.edu-idx{
+  font-family:'Cormorant Garamond',serif;
+  font-size:3.5rem;font-weight:300;
+  color:rgba(201,168,76,0.1);line-height:1;
+}
+.edu-deg{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.5rem;font-weight:600;color:var(--cream);
+  line-height:1.1;
+}
+.edu-field{
+  font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;
+  color:var(--gold);
+}
+.edu-inst{font-size:0.7rem;color:var(--dust);line-height:1.6}
+.edu-yr{
+  font-size:0.62rem;letter-spacing:0.12em;
+  color:rgba(255,255,255,0.15);
+  border-top:1px solid var(--border);padding-top:1rem;
+  margin-top:0.5rem;
+}
+
+/* ═══ CONTACT ═══ */
+#contact{
+  background:var(--ink2);
+  border-top:1px solid var(--border);
+  text-align:center;
+  padding:8rem 5%;
+}
+.contact-editorial{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(3.5rem,9vw,9rem);
+  font-weight:300;line-height:0.88;
+  letter-spacing:-0.03em;color:var(--cream);
+  margin:3rem 0;
+}
+.contact-editorial em{font-style:italic;color:var(--gold)}
+.contact-sub{
+  font-size:0.72rem;color:var(--dust);letter-spacing:0.08em;
+  line-height:2;margin-bottom:3rem;
+}
+.contact-links{display:flex;gap:1px;justify-content:center;flex-wrap:wrap}
+.clink{
+  display:flex;align-items:center;gap:8px;
+  background:var(--panel);border:1px solid var(--border);
+  color:var(--cream2);text-decoration:none;
+  font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;
+  padding:1rem 2rem;transition:all 0.2s;
+}
+.clink:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+
+/* ═══ FOOTER ═══ */
+footer{
+  background:#08080b;
+  padding:1.5rem 5%;
+  display:flex;align-items:center;justify-content:space-between;
+  border-top:1px solid var(--border);
+}
+.footer-brand{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.1rem;letter-spacing:0.18em;color:var(--dust);
+}
+.footer-brand em{color:var(--gold);font-style:normal}
+.footer-copy{font-size:0.58rem;letter-spacing:0.12em;color:rgba(255,255,255,0.15)}
+
+/* ═══ REVEAL ═══ */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity 0.8s ease,transform 0.8s ease}
+.reveal.in{opacity:1;transform:translateY(0)}
+
+/* ═══ RESPONSIVE ═══ */
+@media(max-width:980px){
+  #hero{grid-template-columns:1fr;padding-top:60px}
+  .hero-right{display:none}
+  .about-layout,
+  .cert-layout,
+  .awards-layout,
+  .edu-layout{grid-template-columns:1fr}
+  .skills-grid{grid-template-columns:1fr 1fr}
+  .exp-row{grid-template-columns:1fr;gap:0.8rem}
+  .exp-idx{display:none}
+  .exp-img-slot{display:none}
+  .impact-band{grid-template-columns:1fr 1fr}
+  .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .gal-item.span-row{grid-row:span 1}
+  nav .nav-links{display:none}
+}
+</style>
+</head>
+<body>
+
+<div id="c-dot"></div>
+<div id="c-ring"></div>
+
+<!-- ════ NAV ════ -->
+<nav>
+  <a class="logo" href="#hero">SAI<em>.</em></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#awards">Awards</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#certifications">Certs</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="mailto:krishna2609@gmail.com">Hire Me</a>
+</nav>
+
+<!-- ════ HERO ════ -->
+<section id="hero">
+  <div class="hero-noise"></div>
+  <div class="hero-rule"></div>
+
+  <div class="hero-left">
+    <div class="hero-vol">Vol. XI &nbsp;·&nbsp; Healthcare Digital &nbsp;·&nbsp; Hyderabad</div>
+
+    <h1 class="hero-name">
+      Saikrishna<br><span class="italic">Rao M</span>
+    </h1>
+    <div class="hero-title-line">Digital Marketing Manager</div>
+
+    <p class="hero-desc">
+      11+ years turning healthcare brands into high-performance digital ecosystems — bridging AI, MarTech and creative strategy across Apollo, Vijaya and beyond.
+    </p>
+
+    <div class="hero-stats">
+      <div class="hstat"><span class="hstat-n">11+</span><span class="hstat-l">Yrs Exp</span></div>
+      <div class="hstat"><span class="hstat-n">₹55L</span><span class="hstat-l">Mo. Budget</span></div>
+      <div class="hstat"><span class="hstat-n">50%</span><span class="hstat-l">CPL Drop</span></div>
+      <div class="hstat"><span class="hstat-n">300%</span><span class="hstat-l">YoY Growth</span></div>
+    </div>
+
+    <div class="hero-actions">
+      <a class="btn-primary" href="mailto:krishna2609@gmail.com">Get in Touch</a>
+      <a class="btn-secondary" href="https://www.linkedin.com/in/saipuramshetty" target="_blank">LinkedIn Profile →</a>
+    </div>
+  </div>
+
+  <!-- PHOTO COLUMN -->
+  <div class="hero-right">
+    <div class="photo-main">
+      <!-- 
+        ══════════════════════════════
+        LINKEDIN PROFILE PHOTO
+        To add your photo:
+        1. Download your LinkedIn profile photo
+        2. Replace the placeholder below with:
+           <img src="your-photo.jpg" alt="Saikrishna Rao M">
+        Or use your LinkedIn photo URL:
+           <img src="https://media.licdn.com/dms/image/..." alt="Saikrishna Rao M">
+        ══════════════════════════════
+      -->
+      <div class="photo-placeholder">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+          <circle cx="24" cy="18" r="10" stroke="#c9a84c" stroke-width="1.5"/>
+          <path d="M4 44c0-11 9-19 20-19s20 8 20 19" stroke="#c9a84c" stroke-width="1.5"/>
+        </svg>
+        <p>Add LinkedIn<br>Profile Photo Here<br><br>Replace with<br>&lt;img src="your-photo.jpg"&gt;</p>
+      </div>
+      <div class="photo-overlay"></div>
+      <div class="photo-caption">
+        <span class="photo-tag">Available for Senior Roles</span>
+        <span class="photo-loc">📍 Hyderabad, India</span>
+      </div>
+    </div>
+    <div class="hero-chips">
+      <div class="h-chip">Performance Marketing</div>
+      <div class="h-chip">SEO · GA4 · GTM</div>
+      <div class="h-chip">MarTech & CRM</div>
+      <div class="h-chip">AI Workflows</div>
+      <div class="h-chip">Healthcare Domain</div>
+      <div class="h-chip">Google Certified</div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-inner">
+    <span class="ticker-item">Google Ads<span class="ticker-sep"></span></span>
+    <span class="ticker-item">Meta Ads<span class="ticker-sep"></span></span>
+    <span class="ticker-item">SEO<span class="ticker-sep"></span></span>
+    <span class="ticker-item">GA4 Analytics<span class="ticker-sep"></span></span>
+    <span class="ticker-item">MarTech<span class="ticker-sep"></span></span>
+    <span class="ticker-item">CRM Automation<span class="ticker-sep"></span></span>
+    <span class="ticker-item">Performance Marketing<span class="ticker-sep"></span></span>
+    <span class="ticker-item">Brand Strategy<span class="ticker-sep"></span></span>
+    <span class="ticker-item">AI-Powered Campaigns<span class="ticker-sep"></span></span>
+    <span class="ticker-item">Growth Marketing<span class="ticker-sep"></span></span>
+    <span class="ticker-item">Google Ads<span class="ticker-sep"></span></span>
+    <span class="ticker-item">Meta Ads<span class="ticker-sep"></span></span>
+    <span class="ticker-item">SEO<span class="ticker-sep"></span></span>
+    <span class="ticker-item">GA4 Analytics<span class="ticker-sep"></span></span>
+    <span class="ticker-item">MarTech<span class="ticker-sep"></span></span>
+    <span class="ticker-item">CRM Automation<span class="ticker-sep"></span></span>
+    <span class="ticker-item">Performance Marketing<span class="ticker-sep"></span></span>
+    <span class="ticker-item">Brand Strategy<span class="ticker-sep"></span></span>
+    <span class="ticker-item">AI-Powered Campaigns<span class="ticker-sep"></span></span>
+    <span class="ticker-item">Growth Marketing<span class="ticker-sep"></span></span>
+  </div>
+</div>
+
+<!-- ════ ABOUT ════ -->
+<section id="about">
+  <div class="sec-header">
+    <div class="sec-vol">Who I Am</div>
+    <h2 class="sec-title">Bridging <em>creativity</em><br>& technology</h2>
+  </div>
+  <div class="about-layout">
+    <div class="about-body reveal">
+      <p>I'm a forward-thinking digital marketing professional with over <strong>11 years of experience</strong> in the healthcare sector — managing multi-vertical digital strategies across Apollo Dental, Apollo Sugar, Apollo Clinics, Apollo Diagnostics, and Apollo Dialysis.</p>
+      <p>What sets me apart is a rare combination: <strong>creative marketing instinct backed by deep technical execution</strong>. I don't just run campaigns — I build end-to-end marketing systems that leverage AI, automation, and data to scale efficiently in regulated healthcare environments.</p>
+      <p>Currently driving performance for Apollo Health and Lifestyle Ltd, managing a <em>₹55L/month</em> advertising budget across Google and Meta — achieving a <strong>50% reduction in CPL</strong> and optimizing 400+ GMB profiles for hyper-local reach.</p>
+      <p>Open to <strong>senior leadership roles</strong>, strategic consulting and collaborations at the intersection of Marketing × Data × AI.</p>
+    </div>
+    <div class="skill-bars reveal">
+      <div class="sbar-row">
+        <span class="sbar-label">Performance Marketing</span>
+        <div class="sbar-track"><div class="sbar-fill" style="width:95%"></div></div>
+        <span class="sbar-pct">95</span>
+      </div>
+      <div class="sbar-row">
+        <span class="sbar-label">SEO & Local SEO</span>
+        <div class="sbar-track"><div class="sbar-fill" style="width:90%"></div></div>
+        <span class="sbar-pct">90</span>
+      </div>
+      <div class="sbar-row">
+        <span class="sbar-label">MarTech & CRM</span>
+        <div class="sbar-track"><div class="sbar-fill" style="width:88%"></div></div>
+        <span class="sbar-pct">88</span>
+      </div>
+      <div class="sbar-row">
+        <span class="sbar-label">Analytics & Reporting</span>
+        <div class="sbar-track"><div class="sbar-fill" style="width:85%"></div></div>
+        <span class="sbar-pct">85</span>
+      </div>
+      <div class="sbar-row">
+        <span class="sbar-label">AI Workflow Automation</span>
+        <div class="sbar-track"><div class="sbar-fill" style="width:80%"></div></div>
+        <span class="sbar-pct">80</span>
+      </div>
+      <div class="sbar-row">
+        <span class="sbar-label">Brand Strategy</span>
+        <div class="sbar-track"><div class="sbar-fill" style="width:82%"></div></div>
+        <span class="sbar-pct">82</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ EXPERIENCE ════ -->
+<section id="experience">
+  <div class="sec-header">
+    <div class="sec-vol">Career Timeline</div>
+    <h2 class="sec-title">Work <em>Experience</em></h2>
+  </div>
+  <div class="exp-table">
+
+    <div class="exp-row reveal">
+      <div>
+        <div class="exp-period">May 2024<br>— Present</div>
+        <div class="exp-badge">Current</div>
+      </div>
+      <div class="exp-idx">01</div>
+      <div>
+        <div class="exp-role">Digital Marketing Manager</div>
+        <div class="exp-co">Apollo Health and Lifestyle Ltd (AHLL) · Hyderabad</div>
+        <ul class="exp-pts">
+          <li>Spearheading digital strategy for Apollo Dental, Sugar, Clinics, Diagnostics & Dialysis verticals</li>
+          <li>Managing ₹55L/month ad budget across Google & Meta — optimizing ROAS and spend efficiency</li>
+          <li>Achieved 50% reduction in CPL via strategic bidding, campaign restructuring & landing page CRO</li>
+          <li>Optimized 400+ GMB profiles for local SEO; leading MarTech stack with Zoho CRM, CleverTap & WhatsApp API</li>
+          <li>Won Apollo Stellar Achiever Award 2025 for outstanding digital marketing excellence</li>
+        </ul>
+      </div>
+      <!--
+        Add award photo here — e.g. Apollo Stellar Achiever ceremony photo:
+        <img class="exp-award-img" src="apollo-stellar-award.jpg" alt="Apollo Stellar Achiever Award">
+      -->
+      <div class="exp-img-slot">Award<br>Photo<br>Here</div>
+    </div>
+
+    <div class="exp-row reveal">
+      <div>
+        <div class="exp-period">Dec 2019<br>— Apr 2024</div>
+      </div>
+      <div class="exp-idx">02</div>
+      <div>
+        <div class="exp-role">Digital Marketing Manager</div>
+        <div class="exp-co">Vijaya Diagnostic Centre Limited · Hyderabad</div>
+        <ul class="exp-pts">
+          <li>Scaled digital ecosystem from scratch — website, mobile app & analytics infrastructure</li>
+          <li>Delivered 300% YoY growth in web enquiries through landing page optimisation & paid media</li>
+          <li>Streamlined multi-vendor coordination for SEO, creatives & brand collaterals</li>
+          <li>Won Konnect Insights Excellence Award 2022 — Best Use of Social Publishing in Healthcare</li>
+        </ul>
+      </div>
+      <!--
+        <img class="exp-award-img" src="konnect-award.jpg" alt="Konnect Insights Award">
+      -->
+      <div class="exp-img-slot">Award<br>Photo<br>Here</div>
+    </div>
+
+    <div class="exp-row reveal">
+      <div>
+        <div class="exp-period">May 2017<br>— Dec 2019</div>
+      </div>
+      <div class="exp-idx">03</div>
+      <div>
+        <div class="exp-role">Senior Executive — Digital Marketing</div>
+        <div class="exp-co">Apollo MedSkills Limited · Hyderabad</div>
+        <ul class="exp-pts">
+          <li>Managed performance campaigns driving lead generation for healthcare training programs</li>
+          <li>Developed SEO strategies, content plans & CRM workflows to support enrollment growth</li>
+        </ul>
+      </div>
+      <div class="exp-img-slot">Team<br>Photo<br>Here</div>
+    </div>
+
+    <div class="exp-row reveal">
+      <div>
+        <div class="exp-period">Oct 2015<br>— Apr 2017</div>
+      </div>
+      <div class="exp-idx">04</div>
+      <div>
+        <div class="exp-role">Digital Marketing Executive</div>
+        <div class="exp-co">Traffika Asia · Hyderabad</div>
+        <ul class="exp-pts">
+          <li>Executed multi-channel campaigns for clients across healthcare, e-commerce & B2B sectors</li>
+          <li>Managed Google Ads, Facebook Ads & SEO projects with measurable ROI outcomes</li>
+        </ul>
+      </div>
+      <div class="exp-img-slot">Office<br>Photo<br>Here</div>
+    </div>
+
+    <div class="exp-row reveal">
+      <div>
+        <div class="exp-period">Aug 2014<br>— Sep 2015</div>
+      </div>
+      <div class="exp-idx">05</div>
+      <div>
+        <div class="exp-role">Digital Marketing Specialist</div>
+        <div class="exp-co">ITInfo Group · Hyderabad</div>
+        <ul class="exp-pts">
+          <li>Executed SEO, SEM & social campaigns across agency client portfolio</li>
+          <li>Built foundational skills in campaign management, keyword research & web analytics</li>
+        </ul>
+      </div>
+      <div class="exp-img-slot">Team<br>Photo<br>Here</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════ IMPACT BAND ════ -->
+<div id="impact">
+  <div class="impact-band">
+    <div class="impact-cell reveal">
+      <span class="impact-n">11+</span>
+      <span class="impact-l">Years in<br>Healthcare Marketing</span>
+    </div>
+    <div class="impact-cell reveal">
+      <span class="impact-n">50%</span>
+      <span class="impact-l">Cost Per Lead<br>Reduction at Apollo</span>
+    </div>
+    <div class="impact-cell reveal">
+      <span class="impact-n">300%</span>
+      <span class="impact-l">YoY Web Enquiry<br>Growth at Vijaya</span>
+    </div>
+    <div class="impact-cell reveal">
+      <span class="impact-n">400+</span>
+      <span class="impact-l">GMB Profiles<br>Optimised</span>
+    </div>
+  </div>
+</div>
+
+<!-- ════ SKILLS ════ -->
+<section id="skills">
+  <div class="sec-header">
+    <div class="sec-vol">Capabilities</div>
+    <h2 class="sec-title">Tools & <em>Expertise</em></h2>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-panel reveal">
+      <div class="sp-num">01</div>
+      <div class="sp-name">Performance Marketing</div>
+      <div class="sp-tags">
+        <span class="sp-tag">SEM / PPC</span><span class="sp-tag">Google Ads</span>
+        <span class="sp-tag">Meta Ads</span><span class="sp-tag">Bid Strategy</span>
+        <span class="sp-tag">RSA / DSA</span><span class="sp-tag">CRO</span>
+      </div>
+    </div>
+    <div class="skill-panel reveal">
+      <div class="sp-num">02</div>
+      <div class="sp-name">SEO & Local SEO</div>
+      <div class="sp-tags">
+        <span class="sp-tag">Technical SEO</span><span class="sp-tag">Local SEO</span>
+        <span class="sp-tag">GMB Optimisation</span><span class="sp-tag">Keyword Research</span>
+        <span class="sp-tag">On-page SEO</span><span class="sp-tag">Link Building</span>
+      </div>
+    </div>
+    <div class="skill-panel reveal">
+      <div class="sp-num">03</div>
+      <div class="sp-name">MarTech & Automation</div>
+      <div class="sp-tags">
+        <span class="sp-tag">CRM Integration</span><span class="sp-tag">Workflow Automation</span>
+        <span class="sp-tag">WhatsApp API</span><span class="sp-tag">Email Marketing</span>
+        <span class="sp-tag">Make.com</span><span class="sp-tag">CleverTap</span>
+      </div>
+    </div>
+    <div class="skill-panel reveal">
+      <div class="sp-num">04</div>
+      <div class="sp-name">Analytics & Data</div>
+      <div class="sp-tags">
+        <span class="sp-tag">GA4</span><span class="sp-tag">GTM</span>
+        <span class="sp-tag">Looker Studio</span><span class="sp-tag">Power BI</span>
+        <span class="sp-tag">A/B Testing</span><span class="sp-tag">Dashboard Building</span>
+      </div>
+    </div>
+    <div class="skill-panel reveal">
+      <div class="sp-num">05</div>
+      <div class="sp-name">AI & Growth</div>
+      <div class="sp-tags">
+        <span class="sp-tag">AI Tool Implementation</span><span class="sp-tag">AI-Powered Ads</span>
+        <span class="sp-tag">Growth Marketing</span><span class="sp-tag">Funnel Optimisation</span>
+      </div>
+    </div>
+    <div class="skill-panel reveal">
+      <div class="sp-num">06</div>
+      <div class="sp-name">Brand & Content</div>
+      <div class="sp-tags">
+        <span class="sp-tag">Brand Strategy</span><span class="sp-tag">Content Planning</span>
+        <span class="sp-tag">Social Publishing</span><span class="sp-tag">Creative Direction</span>
+        <span class="sp-tag">Konnect Insights</span><span class="sp-tag">Figma</span>
+      </div>
+    </div>
+  </div>
+  <div class="tools-row reveal">
+    <span class="tool-token">Google Ads</span><span class="tool-token">Meta Ads</span>
+    <span class="tool-token">GA4</span><span class="tool-token">GTM</span>
+    <span class="tool-token">SEMrush</span><span class="tool-token">Ahrefs</span>
+    <span class="tool-token">Zoho CRM</span><span class="tool-token">HubSpot</span>
+    <span class="tool-token">CleverTap</span><span class="tool-token">Make.com</span>
+    <span class="tool-token">WhatsApp API</span><span class="tool-token">MyOperator</span>
+    <span class="tool-token">Looker Studio</span><span class="tool-token">Power BI</span>
+    <span class="tool-token">Microsoft Clarity</span><span class="tool-token">Konnect Insights</span>
+    <span class="tool-token">Google My Business</span><span class="tool-token">Figma</span>
+    <span class="tool-token">WordPress</span><span class="tool-token">Elementor</span>
+  </div>
+</section>
+
+<!-- ════ AWARDS ════ -->
+<section id="awards">
+  <div class="sec-header">
+    <div class="sec-vol">Recognition</div>
+    <h2 class="sec-title">Awards & <em>Achievements</em></h2>
+  </div>
+  <div class="awards-layout">
+
+    <div class="award-card reveal">
+      <div class="award-photo-zone">
+        <!--
+          AWARD PHOTO 1 — Apollo Stellar Achiever Award 2025
+          Replace with: <img src="apollo-award-2025.jpg" alt="Apollo Stellar Achiever Award">
+        -->
+        <div class="aw-photo-placeholder">
+          📸 Add Apollo Stellar<br>Achiever Award Photo<br><br>Award ceremony / trophy / team photo
+        </div>
+      </div>
+      <div class="aw-year-mark">25</div>
+      <div class="aw-cat">Apollo Health and Lifestyle Limited</div>
+      <div class="aw-title">Apollo Stellar Achiever Award</div>
+      <div class="aw-org">Outstanding Digital Marketing Excellence · 2025</div>
+      <div class="aw-desc">Recognized for outstanding performance and digital marketing excellence across Apollo's multi-vertical healthcare ecosystem.</div>
+      <div class="aw-stamp"><span class="aw-dot"></span>2025 · Current Employer</div>
+    </div>
+
+    <div class="award-card reveal">
+      <div class="award-photo-zone">
+        <!--
+          AWARD PHOTO 2 — Konnect Insights Award 2022
+          Replace with: <img src="konnect-award-2022.jpg" alt="Konnect Insights Award">
+        -->
+        <div class="aw-photo-placeholder">
+          📸 Add Konnect Insights<br>Award Photo (2022)<br><br>Award stage / trophy / team celebration
+        </div>
+      </div>
+      <div class="aw-year-mark">22</div>
+      <div class="aw-cat">Best Use of Social Publishing · Healthcare</div>
+      <div class="aw-title">Konnect Insights Excellence Award</div>
+      <div class="aw-org">Industry Recognition for Innovative Strategy · 2022</div>
+      <div class="aw-desc">Industry recognition for innovative social publishing strategy delivering measurable healthcare engagement results.</div>
+      <div class="aw-stamp"><span class="aw-dot"></span>2022 · Vijaya Diagnostic Centre</div>
+    </div>
+
+    <div class="award-card reveal">
+      <div class="award-photo-zone">
+        <!--
+          KEY IMPACT VISUAL — Web Enquiry Growth
+          Add a dashboard screenshot, presentation slide,
+          or AOP milestone image here
+          Replace with: <img src="vijaya-growth.jpg" alt="300% Growth">
+        -->
+        <div class="aw-photo-placeholder">
+          📊 Add Growth Dashboard<br>Screenshot or AOP Slide<br><br>300% YoY web enquiry milestone
+        </div>
+      </div>
+      <div class="aw-cat">Vijaya Diagnostic Centre Limited</div>
+      <div class="aw-title">300% YoY Web Enquiry Growth</div>
+      <div class="aw-org">Sustained Landing Page & Multi-Channel Strategy</div>
+      <div class="aw-desc">Tripled web enquiries through sustained landing page optimisation, performance media strategy and multi-channel digital execution.</div>
+      <div class="aw-stamp"><span class="aw-dot"></span>Key Impact Milestone</div>
+    </div>
+
+    <div class="award-card reveal">
+      <div class="award-photo-zone">
+        <!--
+          KEY IMPACT VISUAL — CPL Reduction
+          Add a before/after campaign report screenshot or AOP image
+          Replace with: <img src="apollo-cpl.jpg" alt="50% CPL Reduction">
+        -->
+        <div class="aw-photo-placeholder">
+          📉 Add CPL Reduction<br>Report or Campaign<br>Performance Screenshot
+        </div>
+      </div>
+      <div class="aw-cat">Apollo Health and Lifestyle Limited</div>
+      <div class="aw-title">50% Cost Per Lead Reduction</div>
+      <div class="aw-org">Strategic Bidding & Campaign Restructuring</div>
+      <div class="aw-desc">Delivered major budget efficiency gains through strategic bidding, campaign restructuring and audience refinement across Google & Meta.</div>
+      <div class="aw-stamp"><span class="aw-dot"></span>Key Impact Milestone</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════ GALLERY / AOP IMAGES ════ -->
+<section id="gallery">
+  <div class="sec-header">
+    <div class="sec-vol">Gallery</div>
+    <h2 class="sec-title">Moments & <em>Milestones</em></h2>
+    <p class="gallery-intro">A visual journey through campaigns, team moments, annual reviews, and brand activations across 11+ years of healthcare marketing.</p>
+  </div>
+  <div class="gallery-grid">
+    <!--
+      ════════════════════════════════════
+      GALLERY PHOTO ZONES — 6 slots
+      Suggested content for each slot:
+      1. AOP / Annual strategy presentation
+      2. Award ceremony photo
+      3. Team photo / office event
+      4. Campaign launch / brand activation
+      5. Conference / speaking engagement
+      6. Certification achievement
+      ════════════════════════════════════
+    -->
+    <div class="gal-item span-row reveal">
+      <!-- <img src="aop-annual-plan.jpg" alt="AOP Annual Operating Plan"> -->
+      <div class="gal-placeholder">
+        🏢 Slot 1 — Large Feature<br><br>AOP Annual Review<br>or Team Group Photo<br><br>Recommended: 800×560px portrait
+      </div>
+      <div class="gal-overlay"></div>
+      <div class="gal-label">Annual Operating Plan</div>
+    </div>
+
+    <div class="gal-item reveal">
+      <!-- <img src="award-ceremony.jpg" alt="Award Ceremony"> -->
+      <div class="gal-placeholder">
+        🏆 Slot 2<br><br>Award Ceremony Photo
+      </div>
+      <div class="gal-overlay"></div>
+      <div class="gal-label">Award Ceremony</div>
+    </div>
+
+    <div class="gal-item reveal">
+      <!-- <img src="team-event.jpg" alt="Team Event"> -->
+      <div class="gal-placeholder">
+        👥 Slot 3<br><br>Team Event / Office
+      </div>
+      <div class="gal-overlay"></div>
+      <div class="gal-label">Team Moments</div>
+    </div>
+
+    <div class="gal-item reveal">
+      <!-- <img src="campaign-launch.jpg" alt="Campaign Launch"> -->
+      <div class="gal-placeholder">
+        🚀 Slot 4<br><br>Campaign Launch
+      </div>
+      <div class="gal-overlay"></div>
+      <div class="gal-label">Campaign Launch</div>
+    </div>
+
+    <div class="gal-item reveal">
+      <!-- <img src="conference.jpg" alt="Conference"> -->
+      <div class="gal-placeholder">
+        🎤 Slot 5<br><br>Conference / Event
+      </div>
+      <div class="gal-overlay"></div>
+      <div class="gal-label">Industry Event</div>
+    </div>
+
+    <div class="gal-item reveal">
+      <!-- <img src="certification.jpg" alt="Certification"> -->
+      <div class="gal-placeholder">
+        📜 Slot 6<br><br>Certificate Photo
+      </div>
+      <div class="gal-overlay"></div>
+      <div class="gal-label">Certification</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ CERTIFICATIONS ════ -->
+<section id="certifications">
+  <div class="sec-header">
+    <div class="sec-vol">Credentials</div>
+    <h2 class="sec-title">Certifications</h2>
+  </div>
+  <div class="cert-layout">
+    <div class="cert-list reveal">
+      <div class="cert-item">
+        <div class="cert-ico">🤖</div>
+        <div class="cert-info">
+          <div class="cert-name">AI-Powered Performance Ads Certification</div>
+          <div class="cert-issuer">Google — Skillshop</div>
+        </div>
+        <span class="cert-verified">Certified</span>
+      </div>
+      <div class="cert-item">
+        <div class="cert-ico">🔍</div>
+        <div class="cert-info">
+          <div class="cert-name">Google Ads Search Certification</div>
+          <div class="cert-issuer">Google — Skillshop</div>
+        </div>
+        <span class="cert-verified">Certified</span>
+      </div>
+      <div class="cert-item">
+        <div class="cert-ico">📢</div>
+        <div class="cert-info">
+          <div class="cert-name">Digital Advertising Certification</div>
+          <div class="cert-issuer">Google — Skillshop</div>
+        </div>
+        <span class="cert-verified">Certified</span>
+      </div>
+      <div class="cert-item">
+        <div class="cert-ico">📈</div>
+        <div class="cert-info">
+          <div class="cert-name">Digital Marketing Certification</div>
+          <div class="cert-issuer">Google — Skillshop</div>
+        </div>
+        <span class="cert-verified">Certified</span>
+      </div>
+      <div class="cert-item">
+        <div class="cert-ico">📊</div>
+        <div class="cert-info">
+          <div class="cert-name">Google Analytics Certification</div>
+          <div class="cert-issuer">Google — Skillshop</div>
+        </div>
+        <span class="cert-verified">Certified</span>
+      </div>
+    </div>
+
+    <!--
+      ════════════════════════════════
+      CERTIFICATION PHOTO GRID — 4 slots
+      Add screenshots or photos of your
+      Google Skillshop certificate pages,
+      digital badge images, or printed certs.
+      ════════════════════════════════
+    -->
+    <div class="cert-photos reveal">
+      <div class="cert-photo-card">
+        <!-- <img src="google-ai-ads-cert.jpg" alt="AI-Powered Ads Cert"> -->
+        <div class="cert-photo-placeholder">📜 AI Ads<br>Certificate Photo</div>
+        <div class="cert-photo-label">AI-Powered Ads Cert</div>
+      </div>
+      <div class="cert-photo-card">
+        <!-- <img src="google-search-cert.jpg" alt="Search Ads Cert"> -->
+        <div class="cert-photo-placeholder">🔍 Search Ads<br>Certificate Photo</div>
+        <div class="cert-photo-label">Google Ads Search</div>
+      </div>
+      <div class="cert-photo-card">
+        <!-- <img src="ga4-cert.jpg" alt="GA4 Certification"> -->
+        <div class="cert-photo-placeholder">📊 GA4<br>Certificate Photo</div>
+        <div class="cert-photo-label">Google Analytics 4</div>
+      </div>
+      <div class="cert-photo-card">
+        <!-- <img src="digital-mktg-cert.jpg" alt="Digital Marketing Cert"> -->
+        <div class="cert-photo-placeholder">📈 Digital Mktg<br>Certificate Photo</div>
+        <div class="cert-photo-label">Digital Marketing</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ EDUCATION ════ -->
+<section id="education">
+  <div class="sec-header">
+    <div class="sec-vol">Academic Background</div>
+    <h2 class="sec-title">Education</h2>
+  </div>
+  <div class="edu-layout">
+    <div class="edu-card reveal">
+      <div class="edu-idx">01</div>
+      <div class="edu-deg">Master of Business Administration</div>
+      <div class="edu-field">Human Resources Management & IT</div>
+      <div class="edu-inst">Apex College of Management & Computer Sciences · Osmania University</div>
+      <div class="edu-yr">MBA · 2011 — 2013</div>
+    </div>
+    <div class="edu-card reveal">
+      <div class="edu-idx">02</div>
+      <div class="edu-deg">Bachelor of Technology</div>
+      <div class="edu-field">Computer Science & Engineering</div>
+      <div class="edu-inst">TRR College of Engineering · JNTU</div>
+      <div class="edu-yr">B.Tech · 2007 — 2011</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ CONTACT ════ -->
+<section id="contact">
+  <div class="sec-vol" style="justify-content:center">Let's Connect</div>
+  <div class="contact-editorial">
+    Let's build<br><em>something</em><br>great.
+  </div>
+  <p class="contact-sub">
+    Open to senior roles, consulting & collaborations<br>
+    at the intersection of Marketing × Data × AI
+  </p>
+  <div class="contact-links">
+    <a class="clink" href="mailto:krishna2609@gmail.com">✉ krishna2609@gmail.com</a>
+    <a class="clink" href="https://www.linkedin.com/in/saipuramshetty" target="_blank">in linkedin.com/in/saipuramshetty</a>
+    <a class="clink" href="#">📍 Hyderabad, India</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">SAI<em>KRISHNA</em> RAO M</div>
+  <div class="footer-copy">© 2025 · Digital Marketing Manager · Hyderabad</div>
+</footer>
+
+<script>
+/* Cursor */
+const dot = document.getElementById('c-dot');
+const ring = document.getElementById('c-ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{
+  mx=e.clientX;my=e.clientY;
+  dot.style.left=(mx-4)+'px';dot.style.top=(my-4)+'px';
+});
+(function anim(){
+  rx+=(mx-rx)*0.1;ry+=(my-ry)*0.1;
+  ring.style.left=(rx-20)+'px';ring.style.top=(ry-20)+'px';
+  requestAnimationFrame(anim);
+})();
+document.querySelectorAll('a,button,.skill-panel,.award-card,.cert-item').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{dot.style.transform='scale(3)';ring.style.transform='scale(1.6)';ring.style.borderColor='rgba(201,168,76,0.5)'});
+  el.addEventListener('mouseleave',()=>{dot.style.transform='scale(1)';ring.style.transform='scale(1)';ring.style.borderColor='rgba(201,168,76,0.25)'});
+});
+
+/* Scroll reveal */
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){
+      const idx=Array.from(e.target.parentElement.children).indexOf(e.target);
+      setTimeout(()=>e.target.classList.add('in'),idx*80);
+      obs.unobserve(e.target);
+    }
+  });
+},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+/* Animate skill bars */
+const barObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const fill=e.target.querySelector('.sbar-fill');
+      if(fill){const w=fill.style.width;fill.style.width='0';setTimeout(()=>fill.style.width=w,50);}
+      barObs.unobserve(e.target);
+    }
+  });
+},{threshold:0.5});
+document.querySelectorAll('.sbar-row').forEach(row=>barObs.observe(row));
+
+/* Nav active state */
+const sections=document.querySelectorAll('section[id],div[id]');
+window.addEventListener('scroll',()=>{
+  let current='';
+  sections.forEach(s=>{if(window.scrollY>=s.offsetTop-100)current=s.id});
+  document.querySelectorAll('.nav-links a').forEach(a=>{
+    a.style.color=a.getAttribute('href')==='#'+current?'var(--gold)':'';
+  });
+},{ passive: true });
+</script>
+</body>
+</html>
